@@ -24,6 +24,11 @@ function pushTask(value) {
   });
 }
 
+function saveAndRender() {
+  saveTasksToLocalStorage('tasksArray', tasksArray);
+  displayTasks(tasksArray);
+}
+
 taskFormEl.addEventListener('submit', (event) => {
   event.preventDefault();
   const taskInputValue = addTasksInputEl.value;
@@ -31,8 +36,7 @@ taskFormEl.addEventListener('submit', (event) => {
     return;
   }
   pushTask(taskInputValue);
-  saveTasksToLocalStorage('tasksArray', tasksArray);
-  displayTasks(tasksArray);
+  saveAndRender();
   addTasksInputEl.value = '';
 });
 
@@ -74,8 +78,7 @@ displayTasks(tasksArray);
 function toggleCompletedTask(index) {
   let task = tasksArray[index];
   task.isCompleted = !task.isCompleted;
-  saveTasksToLocalStorage('tasksArray', tasksArray);
-  displayTasks(tasksArray);
+  saveAndRender();
 }
 
 function toggleTaskWithKeyboard() {
@@ -92,15 +95,13 @@ function deleteTask(index) {
   let taskId = tasksArray[index];
 
   tasksArray = tasksArray.filter((task) => task.id !== taskId.id);
-  saveTasksToLocalStorage('tasksArray', tasksArray);
-  displayTasks(tasksArray);
+  saveAndRender();
 }
 
 clearCompletedBtn.addEventListener('click', (event) => {
   tasksArray = tasksArray.filter((task) => !Object.values(task).every(Boolean));
 
-  saveTasksToLocalStorage('tasksArray', tasksArray);
-  displayTasks(tasksArray);
+  saveAndRender();
 });
 
 const optionsArray = ['all', 'active', 'completed'];
@@ -270,8 +271,7 @@ function handleDrop(e) {
 
       // Update tasksArray and perform necessary actions (e.g., saving to localStorage)
       tasksArray = tempArray;
-      saveTasksToLocalStorage('tasksArray', tasksArray);
-      displayTasks(tasksArray);
+      saveAndRender();
     }
   }
 }
@@ -340,8 +340,7 @@ function handleTouchEnd(e) {
 
         // Update tasksArray and perform necessary actions
         tasksArray = tempArray;
-        saveTasksToLocalStorage('tasksArray', tasksArray);
-        displayTasks(tasksArray);
+        saveAndRender();
       }
     }
 
