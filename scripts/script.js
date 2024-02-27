@@ -172,13 +172,13 @@ themeToggler.addEventListener('click', (event) => {
 
 function toggleTheme() {
   if (localStorage.getItem('mode') === null) {
-    themeToggler.src = `../images/icon-sun.svg`;
+    themeToggler.src = `images/icon-sun.svg`;
   } else if (localStorage.getItem('mode') === 'moon') {
     document.body.classList.add('LightTheme');
-    themeToggler.src = `./images/icon-${localStorage.getItem('mode')}.svg`;
+    themeToggler.src = `images/icon-${localStorage.getItem('mode')}.svg`;
   } else {
     document.body.classList.remove('LightTheme');
-    themeToggler.src = `./images/icon-${localStorage.getItem('mode')}.svg`;
+    themeToggler.src = `images/icon-${localStorage.getItem('mode')}.svg`;
   }
 }
 toggleTheme();
