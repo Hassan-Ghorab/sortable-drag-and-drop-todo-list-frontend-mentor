@@ -175,10 +175,10 @@ function toggleTheme() {
     themeToggler.src = `../images/icon-sun.svg`;
   } else if (localStorage.getItem('mode') === 'moon') {
     document.body.classList.add('LightTheme');
-    themeToggler.src = `../images/icon-${localStorage.getItem('mode')}.svg`;
+    themeToggler.src = `images/icon-${localStorage.getItem('mode')}.svg`;
   } else {
     document.body.classList.remove('LightTheme');
-    themeToggler.src = `../images/icon-${localStorage.getItem('mode')}.svg`;
+    themeToggler.src = `images/icon-${localStorage.getItem('mode')}.svg`;
   }
 }
 toggleTheme();
