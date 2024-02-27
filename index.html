@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="A draggable Todo list app to manage your tasks and to help you focus and finish your work"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <title>Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./scripts/script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="Header">
+        <h1 class="Header__title">todo</h1>
+        <div class="ThemeToggler">
+          <img
+            id="ThemeToggler"
+            class="ThemeToggler__img"
+            src="./images/icon-sun.svg"
+            alt="theme icon"
+            loading="lazy"
+          />
+        </div>
+      </header>
+
+      <form action="" class="TaskForm CustomBar" id="TaskForm">
+        <span class="TaskForm__CheckIcon"></span>
+        <input
+          type="text"
+          id="AddTasksInput"
+          class="TaskForm__input"
+          placeholder="Create a new todo..."
+        />
+      </form>
+
+      <div class="ListContainer">
+        <ul id="list" class="list"></ul>
+
+        <div class="TasksOperations">
+          <div class="LeftItems">
+            <p class="LeftItems__text">
+              <span id="LeftItemsNumber">0</span> items left
+            </p>
+            <button id="ClearCompletedBtn" class="LeftItems__clearButton">
+              Clear Completed
+            </button>
+          </div>
+
+          <div class="options" id="options">
+            <button
+              value="all"
+              class="options__button options__button--active all"
+            >
+              all
+            </button>
+            <button value="active" class="options__button active">
+              active
+            </button>
+            <button value="completed" class="options__button completed">
+              completed
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="Footer">
+        <p>
+          Challenge by
+          <a
+            href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW"
+            target="_blank"
+            class="Footer__links"
+            >Frontend Mentor.</a
+          >
+          Coded by Hassan Ghorab
+          <a
+            href="https://www.linkedin.com/in/hassan-ghorab-3bbb791a1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank"
+            class="Footer__links"
+            >linkedIn.</a
+          >
+          <a
+            href="https://github.com/Hassan-Ghorab"
+            target="_blank"
+            class="Footer__links"
+            >GitHub.</a
+          >
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
